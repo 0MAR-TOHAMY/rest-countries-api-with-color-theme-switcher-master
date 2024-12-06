@@ -75,7 +75,7 @@ header{
 
         .search{
             input{
-                width: 350px;
+                width: 250px;
                 padding: 14px;
                 border-radius: 5px;
                 border: none;
@@ -155,7 +155,105 @@ main{
     }
 }
 
-.light-mode{
-    color: var(--too-Dark-Blue);
-    background-color: var(--White);
+#country{
+    position: relative;
+    width: 90%;
+    height: 83vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#country button.back{
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding: 10px 20px;
+    background-color: var(--Dark-Blue);
+    color: var(--White);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: background-color 0.3s ease;
+    &:hover{
+        background-color: var(--very-Dark-Blue);
+    }
+    i{
+        margin-right: 10px;
+    }
+}
+
+.country-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    img{
+        width: 40%;
+        height: 50%;
+        object-fit: cover;
+        border-radius: 2px;
+    }
+    .details{
+        width: 50%;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        justify-content: center;
+        .top{
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            h4{
+                font-size: 1.1rem;
+                font-weight: 300;
+            }
+            span{
+                font-size: 1.1rem;
+                font-weight: 600;
+                margin-right: 15px;
+            }
+        }
+        .bottom{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+            h3{
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+            .btns{
+                width: 100%;
+                display: flex;
+                gap: 10px;
+            } 
+            .btnBorder{
+                padding: 10px 15px;
+                background-color: var(--Dark-Blue);
+                color: var(--White);
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                transition: background-color 0.3s ease;
+                &:hover{
+                    background-color: var(--very-Dark-Blue);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    nav{
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start !important;
+    }
+    select{
+        margin-left: 0px !important;
+    }
 }
