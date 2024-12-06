@@ -1,10 +1,6 @@
 const container = document.querySelector('#countries');
 const regionMenu = document.querySelector('#regionMenu');
 const searchInput = document.querySelector('#searchInput');
-// import info from "./test.js";
-
-const mode = document.querySelector('.mode');
-const root = document.documentElement;
 
 async function filterAndSearch(query, category) {
     try {
@@ -62,44 +58,3 @@ function modeChange() {
         root.style.setProperty('--Dark-Blue', '#ffffff');
     }
 };
-
-async function openElement(Name){
-    try {
-        const response = await fetch('data.json');
-        const elements = await response.json();
-        const element = elements.filter(el => {
-            return el.name.toLowerCase() === Name.toLowerCase();
-        });
-        info.innerHTML += `
-                <img src=${element.flags.png} alt="flag">
-                <div class="details">
-                    <div class="top">
-                        <div class="left">
-                            <h2>${element.name}</h2>
-                            <h4><span>Native Name:</span>${element.nativeName}</h4>
-                            <h4><span>Population:</span>${element.population}</h4>
-                            <h4><span>Region:</span>${element.region}</h4>
-                            <h4><span>Sub Region:</span>${element.subregion}</h4>
-                            <h4><span>Capital:</span>${element.capital}</h4>
-                        </div>
-                        <div class="right">
-                            <h4><span>Top Level Domain:</span>${element.topLevelDomain}</h4>
-                            <h4><span>Currency:</span>${element.currencies[0].name}</h4>
-                            <h4><span>Languages:</span>${element.languages.map(lang => lang.name).join(', ')}</h4>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="border-countries">
-                            <h3>Border Countries:</h3>
-                            <div class="btns">
-                            ${element.borders.map(border => `<button class='btnBorder' >${border}</button>`).join('')}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-    } catch (error) {
-        console.error('Error fetching or filtering elements:', error);
-    }
-    window.location.href = 'country.html';
-}
