@@ -256,4 +256,54 @@ main{
     select{
         margin-left: 0px !important;
     }
+
+    .country-info{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 320px;
+        img{
+            width: 100%;
+            height: 200px;
+        }
+        .details{
+            width: 90%;
+            margin-top: 10px;
+            .top{
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                h4{
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+            }
+            .bottom{
+                .btns{
+                    flex-wrap: wrap;
+                }
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    #country button.back{
+        top: -10px;
+        left: 5px;
+        position: absolute;
+        padding: 10px 20px;
+        background-color: var(--Dark-Blue);
+        color: var(--White);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        transition: background-color 0.3s ease;
+        &:hover{
+            background-color: var(--very-Dark-Blue);
+        }
+        i{
+            margin-right: 10px;
+        }
+    }
 }
